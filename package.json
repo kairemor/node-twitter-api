@@ -1,0 +1,14 @@
+{
+  "name": "node_twitter_bot",
+  "version": "1.0.0",
+  "description": "this a twitter bot to tweet and response to tweets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kairemor",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
