@@ -4,7 +4,36 @@ const private_key = require('./private_keys');
 
 const T = new Twit(private_key) ;
 
-setInterval(tweet(), 60*1000)
+function tweet (){
+    let rand1 = Math.round(Math.random()*1000);
+    let rand2 = Math.round(Math.random()*1000); 
+    console.log(rand1 + "  " + rand2)
+    let operateur = Math.round(Math.random()*10) ; 
+    console.log("starting")
+    if (operateur <= 2){
+        let result =  rand1+rand2
+        params = {
+            status : rand1 + " + " + rand2 + " = " + result
+        }
+    }else if(operateur <= 6){
+        let result =  rand1-rand2
+        params = {
+            status : rand1 + " - " + rand2 + " = " + result
+        }
+    }
+    else {
+        let result =  rand1*rand2
+        params = {
+            status : rand1 + " * " + rand2 + " = " + result
+        }
+    }
+    T.post('statuses/update', params, (ett,data,response) => {
+        console.log("worked")
+        // console.log(data) ; 
+    });
+}
+
+setInterval(tweet, 60*1000)
 
 //Searching tweet with key world 
 
@@ -17,28 +46,6 @@ setInterval(tweet(), 60*1000)
 //     console.log(response) ;
 // })
 
-function tweet (txt){
-    let rand1 = Math.round(Math.random*1000);
-    let rand2 = Math.round(Math.random*1000); 
-    let operateur = Math.round(Math.random*10) ; 
-    if (operateur <= 2){
-        params = {
-            status : rand1 + " + " + rand2 + " = " + rand1+rand2
-        }
-    }else if(operateur <= 6){
-        params = {
-            status : rand1 + " - " + rand2 + " = " + rand1-rand2
-        }
-    }
-    else {
-        params = {
-            status : rand1 + " * " + rand2 + " = " + rand2
-        }
-    }
-    }
 
-    T.post('statuses/update', params, (ett,data,response) => {
-        console.log("worked")
-        // console.log(data) ; 
-    });
-}
+
+    
