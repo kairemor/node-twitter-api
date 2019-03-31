@@ -33,7 +33,7 @@ function tweet (){
     });
 }
 
-setInterval(tweet, 60*1000)
+setInterval(tweet, 10*1000)
 
 //Searching tweet with key world 
 
