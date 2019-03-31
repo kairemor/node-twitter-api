@@ -4,8 +4,7 @@
   "description": "this a twitter bot to tweet and response to tweets",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1" ,
-    "start":"node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1" 
   },
   "author": "kairemor",
   "license": "ISC",
